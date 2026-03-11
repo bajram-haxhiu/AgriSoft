@@ -1,0 +1,7 @@
+Organizational Overview of Mrizi i Zanave
+
+Mrizi i Zanave is an agritourism enterprise located in the village of Fishtë in northern Albania, founded by the Albanian chef Altin Prenga. The business represents a modern model of rural tourism where agriculture, gastronomy, hospitality, and local production operate together. Originally started as a restaurant focused on traditional Albanian cuisine made with locally sourced ingredients, the enterprise has expanded into a full agritourism complex that includes a restaurant, guesthouse, farm, and food-processing facilities.
+
+The company follows the farm-to-table philosophy, meaning that most ingredients used in the restaurant are produced directly on the farm or supplied by nearby rural families. This creates a closed production cycle where agricultural production, food processing, and gastronomy are interconnected. Visitors not only enjoy traditional food but can also experience rural tourism activities such as farm tours and food-tasting experiences.
+
+Due to its diverse activities, the organization operates through multiple departments including restaurant operations, agriculture, hospitality, logistics, and administration. Managing the flow of information between these departments requires coordination and efficient data management, making the business a suitable case study for the development of an integrated software management system.
