@@ -12,6 +12,7 @@ The software will consist of several main functional modules:
 
 
 
+
 1. Reservation Management Module
 
 This module will manage reservations for both the restaurant and the hotel. Staff will be able to register customer bookings by specifying the date, time, number of guests, and special requests. The system will display room and table availability in real time and prevent double bookings. It will also store the history of reservations for future reference.
