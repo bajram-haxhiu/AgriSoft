@@ -39,33 +39,33 @@ revenue from each service
 
 # *Stakeholders of the System* #
 ### **Primary Stakeholders (Direct users of the system)** 
-1.	Business Owner / Founder – Altin Prenga
+1.	Business Owner / Founder – Altin Prenga.
 
-2.	Executive Management / Business Managers
-3.	Restaurant Manager
-4.	Kitchen Staff (Chefs, cooks, food preparation staff)
-5.	Restaurant Service Staff (waiters, host staff)
-6.	Hotel / Guesthouse Manager
-7.	Hospitality Staff (reception, housekeeping)
-8.	Farm Manager
-9.	Farm Workers (agriculture and livestock workers)
-10.	Food Processing Staff (cheese production, jam production, wine production)
-11.	Administrative and Finance Staff
-12.	Inventory / Supply Manager
+2.	Executive Management / Business Managers.
+3.	Restaurant Manager.
+4.	Kitchen Staff (Chefs, cooks, food preparation staff).
+5.	Restaurant Service Staff (waiters, host staff).
+6.	Hotel / Guesthouse Manager.
+7.	Hospitality Staff (reception, housekeeping).
+8.	Farm Manager.
+9.	Farm Workers (agriculture and livestock workers).
+10.	Food Processing Staff (cheese production, jam production, wine production).
+11.	Administrative and Finance Staff.
+12.	Inventory / Supply Manager.
 
 ### **Secondary Stakeholders (External but directly related)**
 
-13.	Local Farmers and Product Suppliers
+13.	Local Farmers and Product Suppliers.
 
-14.	Logistics and Delivery Partners
-15.	Customers (restaurant visitors)
-16.	Tourists staying in the guesthouse
-17.	Visitors participating in agritourism experiences
+14.	Logistics and Delivery Partners.
+15.	Customers (restaurant visitors).
+16.	Tourists staying in the guesthouse.
+17.	Visitors participating in agritourism experiences.
 
 ### **Tertiary Stakeholders (Indirect but affected)**
 
-18.	Government and Regulatory Authorities (food safety, agriculture, tourism)
+18.	Government and Regulatory Authorities (food safety, agriculture, tourism).
 
-19.	Local Community and Local Families collaborating with the farm
-20.	Tourism Agencies and Tour Operators
-21.	Marketing and Online Reservation Platforms
+19.	Local Community and Local Families collaborating with the farm.
+20.	Tourism Agencies and Tour Operators.
+21.	Marketing and Online Reservation Platforms.
