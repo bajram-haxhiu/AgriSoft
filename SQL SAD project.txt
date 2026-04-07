@@ -1,0 +1,115 @@
+CREATE TABLE CUSTOMER
+(
+  CustomerID INT NOT NULL,
+  Name INT NOT NULL,
+  Email INT NOT NULL,
+  Phone INT NOT NULL,
+  Type INT NOT NULL,
+  RegistrationDate INT NOT NULL,
+  PRIMARY KEY (CustomerID)
+);
+
+CREATE TABLE RESERVATION
+(
+  ReservationID INT NOT NULL,
+  Date INT NOT NULL,
+  Time INT NOT NULL,
+  NumberOfGuests INT NOT NULL,
+  SpecialRequests INT NOT NULL,
+  CustomerID INT NOT NULL,
+  TableID INT NOT NULL,
+  HotelRoomID INT NOT NULL,
+  CustomerID INT NOT NULL,
+  PRIMARY KEY (ReservationID),
+  FOREIGN KEY (CustomerID) REFERENCES CUSTOMER(CustomerID)
+);
+
+CREATE TABLE SUPPLIER
+(
+  SupplierID INT NOT NULL,
+  Name INT NOT NULL,
+  ContactInfo INT NOT NULL,
+  ProductSupplied INT NOT NULL,
+  PRIMARY KEY (SupplierID)
+);
+
+CREATE TABLE FARM
+(
+  ProductionUnitID INT NOT NULL,
+  Name INT NOT NULL,
+  Type INT NOT NULL,
+  Location INT NOT NULL,
+  PRIMARY KEY (ProductionUnitID)
+);
+
+CREATE TABLE PRODUCT
+(
+  ProductID INT NOT NULL,
+  Name INT NOT NULL,
+  Description INT NOT NULL,
+  Category INT NOT NULL,
+  Price INT NOT NULL,
+  QuantityAvailable INT NOT NULL,
+  ProductionUnitID INT NOT NULL,
+  SupplierID INT NOT NULL,
+  ProductionUnitID INT NOT NULL,
+  PRIMARY KEY (ProductID),
+  FOREIGN KEY (SupplierID) REFERENCES SUPPLIER(SupplierID),
+  FOREIGN KEY (ProductionUnitID) REFERENCES FARM(ProductionUnitID)
+);
+
+CREATE TABLE ORDER/SALE
+(
+  OrderID INT NOT NULL,
+  Date INT NOT NULL,
+  CustomerID INT NOT NULL,
+  TotalAmount INT NOT NULL,
+  TotalAmount INT NOT NULL,
+  OrderType INT NOT NULL,
+  CustomerID INT NOT NULL,
+  PRIMARY KEY (OrderID),
+  FOREIGN KEY (CustomerID) REFERENCES CUSTOMER(CustomerID)
+);
+
+CREATE TABLE EMPLOYEE
+(
+  EmployeeID INT NOT NULL,
+  Name INT NOT NULL,
+  Role INT NOT NULL,
+  DepartmentID INT NOT NULL,
+  Email INT NOT NULL,
+  Phone INT NOT NULL,
+  PRIMARY KEY (EmployeeID)
+);
+
+CREATE TABLE DEPARTMENT
+(
+  DepartmentID INT NOT NULL,
+  Name INT NOT NULL,
+  Description INT NOT NULL,
+  EmployeeID INT NOT NULL,
+  PRIMARY KEY (DepartmentID),
+  FOREIGN KEY (EmployeeID) REFERENCES EMPLOYEE(EmployeeID)
+);
+
+CREATE TABLE HOTELROOM/TABLE
+(
+  UnitID INT NOT NULL,
+  UnitType INT NOT NULL,
+  Capacity INT NOT NULL,
+  Status INT NOT NULL,
+  ReservationID INT NOT NULL,
+  PRIMARY KEY (UnitID),
+  FOREIGN KEY (ReservationID) REFERENCES RESERVATION(ReservationID)
+);
+
+CREATE TABLE INCLUDES
+(
+  Quantity INT NOT NULL,
+  Price INT NOT NULL,
+  OrderID INT NOT NULL,
+  ProductID INT NOT NULL,
+  PRIMARY KEY (OrderID, ProductID),
+  FOREIGN KEY (OrderID) REFERENCES ORDER/SALE(OrderID),
+  FOREIGN KEY (ProductID) REFERENCES PRODUCT(ProductID)
+);
