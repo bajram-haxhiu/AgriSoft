@@ -8,7 +8,7 @@ Due to its diverse activities, the organization operates through multiple depart
 
 # **Software System Description**  #
 
-The software will consist of several main functional modules:
+The software will  consist of several main functional modules:
 
 ## **1. Reservation Management Module** ##
 
