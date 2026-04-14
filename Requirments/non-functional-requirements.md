@@ -22,7 +22,7 @@ This document defines the non-functional requirements of the AgriSoft system.
 | NFR-16 | Maintainability| The system shall work on modern browsers.                                       | High     | All Users |
 | NFR-17 | Maintainability| The system shall support integration with external systems.                     | Medium   | Manager |
 | NFR-18 | Compatibility  | The system shall follow modular architecture.                                   | High     | Developer |
-| NFR-19 | Compatibility  | The system shall include proper documentation.                                  | Medium   | Developer |
+| NFR-19 | Compatibility  | The system shall include proper documentation.                                  | High     | Developer |
 | NFR-20 | Data Management| The system shall store data in a structured database.                           | High     | Developer |
 | NFR-21 | Data Management| The system shall perform regular backups.                                       | High     | Manager |
 | NFR-22 | Data Management| The system shall ensure data consistency.                                       | High     | All Users |
