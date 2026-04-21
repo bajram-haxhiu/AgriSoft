@@ -49,12 +49,6 @@
         <mxCell id="qgpmQ6JwcP6GXZPlJXh1-140" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;" value="AgriSoft – Mrizi i Zanave&#xa;UML Use Case Diagram" vertex="1">
           <mxGeometry height="60" width="600" x="1050" y="20" as="geometry" />
         </mxCell>
-        <mxCell id="qgpmQ6JwcP6GXZPlJXh1-141" parent="1" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.bpmn.shape;perimeter=mxPerimeter.rectanglePerimeter;symbol=terminate;isLooping=0;isSequential=0;isCompensation=0;strokeColor=#0050ef;fillColor=none;fontSize=14;fontStyle=1;verticalAlign=top;align=center;" value="AgriSoft Management System" vertex="1">
-          <mxGeometry height="2000" width="1900" x="400" y="100" as="geometry" />
-        </mxCell>
-        <mxCell id="qgpmQ6JwcP6GXZPlJXh1-142" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0050EF;strokeWidth=3;verticalAlign=top;fontSize=15;fontColor=#0050EF;" value="&lt;b&gt;AgriSoft Management System&lt;/b&gt;" vertex="1">
-          <mxGeometry height="2050" width="1900" x="400" y="100" as="geometry" />
-        </mxCell>
         <mxCell id="qgpmQ6JwcP6GXZPlJXh1-143" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;verticalAlign=top;fontSize=12;fontStyle=1;" value="1. Reservation Management Module" vertex="1">
           <mxGeometry height="430" width="540" x="440" y="140" as="geometry" />
         </mxCell>
