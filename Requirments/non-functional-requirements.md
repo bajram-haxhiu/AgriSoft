@@ -1,4 +1,4 @@
-Non-Functional Requirements
+# Non-Functional Requirements
 
 ID| Main Category| Subcategory| Requirement Description| Priority| Stakeholders
 NFR-01| Product Requirements| Efficiency (Performance)| The system shall support multiple users simultaneously.| High| All Users
