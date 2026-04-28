@@ -1,6 +1,7 @@
-Non-Functional Requirements
+# Non-Functional Requirements
 
 ID| Main Category| Subcategory| Requirement Description| Priority| Stakeholders
+
 NFR-01| Product Requirements| Efficiency (Performance)| The system shall support multiple users simultaneously.| High| All Users
 NFR-02| Product Requirements| Efficiency (Performance)| The system shall process transactions within 2 seconds.| High| Staff
 NFR-03| Product Requirements| Efficiency (Performance)| The system shall handle at least 100 concurrent users.| Medium| Manager
