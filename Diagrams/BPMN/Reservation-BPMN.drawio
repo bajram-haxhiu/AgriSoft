@@ -1,78 +1,202 @@
 <mxfile host="app.diagrams.net">
-  <diagram name="Reservation Process" id="ZdjB72wdxJotbEfv9k1D">
-    <mxGraphModel dx="1287" dy="742" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <diagram name="BPMN Corrected Process" id="bpmn_corrected_process">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
       <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="6F7r1V-WXef8c2wREtYo-24" parent="1" style="ellipse;fillColor=#d5e8d4;" value="Start" vertex="1">
-          <mxGeometry height="40" width="80" x="50" y="100" as="geometry" />
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Pool and Lanes -->
+        <mxCell id="pool" value="Restaurant Reservation, Order, Inventory and Sales Process" style="swimlane;horizontal=0;startSize=30;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1500" height="820" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-25" parent="1" style="rounded=1;fillColor=#fff2cc;" value="Provide reservation details" vertex="1">
-          <mxGeometry height="60" width="220" x="150" y="100" as="geometry" />
+        <mxCell id="lane_customer" value="Customer / Visitor" style="swimlane;horizontal=0;startSize=28;fillColor=#f8f9fa;strokeColor=#cccccc;" vertex="1" parent="pool">
+          <mxGeometry x="30" y="0" width="1470" height="110" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-26" parent="1" style="rounded=1;fillColor=#fff2cc;" value="Receive request" vertex="1">
-          <mxGeometry height="60" width="220" x="150" y="200" as="geometry" />
+        <mxCell id="lane_reservation" value="Reservation System" style="swimlane;horizontal=0;startSize=28;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="pool">
+          <mxGeometry x="30" y="110" width="1470" height="150" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-27" parent="1" style="rounded=1;fillColor=#fff2cc;" value="Enter data" vertex="1">
-          <mxGeometry height="60" width="220" x="400" y="200" as="geometry" />
+        <mxCell id="lane_service" value="Restaurant Service" style="swimlane;horizontal=0;startSize=28;fillColor=#f8f9fa;strokeColor=#cccccc;" vertex="1" parent="pool">
+          <mxGeometry x="30" y="260" width="1470" height="120" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-28" parent="1" style="rounded=1;fillColor=#dae8fc;" value="Check availability" vertex="1">
-          <mxGeometry height="60" width="220" x="150" y="300" as="geometry" />
+        <mxCell id="lane_kitchen" value="Kitchen" style="swimlane;horizontal=0;startSize=28;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="pool">
+          <mxGeometry x="30" y="380" width="1470" height="120" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-29" parent="1" style="rhombus;fillColor=#ffe6cc;" value="Double booking?" vertex="1">
-          <mxGeometry height="80" width="120" x="400" y="300" as="geometry" />
+        <mxCell id="lane_inventory" value="Inventory System" style="swimlane;horizontal=0;startSize=28;fillColor=#f8f9fa;strokeColor=#cccccc;" vertex="1" parent="pool">
+          <mxGeometry x="30" y="500" width="1470" height="120" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-30" parent="1" style="rounded=1;fillColor=#d5e8d4;" value="Create reservation" vertex="1">
-          <mxGeometry height="60" width="200" x="550" y="300" as="geometry" />
+        <mxCell id="lane_pos" value="Product Sales / POS" style="swimlane;horizontal=0;startSize=28;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="pool">
+          <mxGeometry x="30" y="620" width="1470" height="100" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-31" parent="1" style="rounded=1;fillColor=#f8cecc;" value="Reject / suggest alternative" vertex="1">
-          <mxGeometry height="60" width="220" x="400" y="420" as="geometry" />
+        <mxCell id="lane_finance" value="Finance / Reporting" style="swimlane;horizontal=0;startSize=28;fillColor=#f8f9fa;strokeColor=#cccccc;" vertex="1" parent="pool">
+          <mxGeometry x="30" y="720" width="1470" height="100" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-32" parent="1" style="rounded=1;fillColor=#dae8fc;" value="Store history" vertex="1">
-          <mxGeometry height="60" width="200" x="780" y="300" as="geometry" />
+
+        <!-- Customer -->
+        <mxCell id="start" value="Start" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lane_customer">
+          <mxGeometry x="40" y="35" width="40" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-33" parent="1" style="rounded=1;fillColor=#dae8fc;" value="Send confirmation" vertex="1">
-          <mxGeometry height="60" width="200" x="1000" y="300" as="geometry" />
+        <mxCell id="submit_request" value="Submit reservation request&#xa;(date, time, guests, special requests)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_customer">
+          <mxGeometry x="110" y="25" width="210" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-34" parent="1" style="rounded=1;fillColor=#fff2cc;" value="Notify staff" vertex="1">
-          <mxGeometry height="60" width="200" x="1000" y="420" as="geometry" />
+        <mxCell id="customer_arrives" value="Arrive for dining / guesthouse&#xa;or purchase traditional products" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_customer">
+          <mxGeometry x="1190" y="25" width="230" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-35" parent="1" style="ellipse;fillColor=#d5e8d4;" value="End" vertex="1">
-          <mxGeometry height="40" width="80" x="1250" y="420" as="geometry" />
+
+        <!-- Reservation system -->
+        <mxCell id="receive_request" value="Receive reservation request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_reservation">
+          <mxGeometry x="110" y="35" width="200" height="55" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-36" edge="1" parent="1" source="6F7r1V-WXef8c2wREtYo-24" target="6F7r1V-WXef8c2wREtYo-25">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="check_availability" value="Check real-time table / room availability" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane_reservation">
+          <mxGeometry x="350" y="35" width="230" height="55" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-37" edge="1" parent="1" source="6F7r1V-WXef8c2wREtYo-25" target="6F7r1V-WXef8c2wREtYo-26">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="gw_available" value="X&#xa;Available?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="lane_reservation">
+          <mxGeometry x="620" y="25" width="95" height="75" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-38" edge="1" parent="1" source="6F7r1V-WXef8c2wREtYo-26" target="6F7r1V-WXef8c2wREtYo-27">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="create_reservation" value="Create and confirm reservation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lane_reservation">
+          <mxGeometry x="760" y="20" width="220" height="55" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-39" edge="1" parent="1" source="6F7r1V-WXef8c2wREtYo-27" target="6F7r1V-WXef8c2wREtYo-28">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="reject_reservation" value="Reject request or suggest alternative slot" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="lane_reservation">
+          <mxGeometry x="760" y="90" width="240" height="55" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-40" edge="1" parent="1" source="6F7r1V-WXef8c2wREtYo-28" target="6F7r1V-WXef8c2wREtYo-29">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="reservation_data" value="Reservation History" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane_reservation">
+          <mxGeometry x="1020" y="20" width="145" height="65" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-41" edge="1" parent="1" source="6F7r1V-WXef8c2wREtYo-29" target="6F7r1V-WXef8c2wREtYo-30">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="notify_staff" value="Notify restaurant / guesthouse staff" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_reservation">
+          <mxGeometry x="1190" y="20" width="230" height="55" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-42" edge="1" parent="1" source="6F7r1V-WXef8c2wREtYo-29" target="6F7r1V-WXef8c2wREtYo-31">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="end_rejected" value="End" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lane_reservation">
+          <mxGeometry x="1045" y="100" width="40" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-43" edge="1" parent="1" source="6F7r1V-WXef8c2wREtYo-30" target="6F7r1V-WXef8c2wREtYo-32">
-          <mxGeometry relative="1" as="geometry" />
+
+        <!-- Service -->
+        <mxCell id="record_order" value="Record customer order" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_service">
+          <mxGeometry x="110" y="30" width="200" height="55" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-44" edge="1" parent="1" source="6F7r1V-WXef8c2wREtYo-32" target="6F7r1V-WXef8c2wREtYo-33">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="associate_order" value="Associate order with table / reservation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_service">
+          <mxGeometry x="350" y="30" width="230" height="55" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-45" edge="1" parent="1" source="6F7r1V-WXef8c2wREtYo-33" target="6F7r1V-WXef8c2wREtYo-34">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="send_kitchen" value="Send order to kitchen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_service">
+          <mxGeometry x="620" y="30" width="190" height="55" as="geometry"/>
         </mxCell>
-        <mxCell id="6F7r1V-WXef8c2wREtYo-46" edge="1" parent="1" source="6F7r1V-WXef8c2wREtYo-34" target="6F7r1V-WXef8c2wREtYo-35">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="order_data" value="Order Details" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane_service">
+          <mxGeometry x="850" y="25" width="145" height="65" as="geometry"/>
         </mxCell>
+        <mxCell id="serve_customer" value="Serve food / service to customer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_service">
+          <mxGeometry x="1040" y="30" width="220" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Kitchen -->
+        <mxCell id="prepare_food" value="Prepare food / process order" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_kitchen">
+          <mxGeometry x="350" y="30" width="230" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="gw_ingredients" value="X&#xa;Ingredients available?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="lane_kitchen">
+          <mxGeometry x="620" y="20" width="115" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="update_usage" value="Update ingredient usage / sold items" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_kitchen">
+          <mxGeometry x="780" y="30" width="230" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="inform_unavailable" value="Inform service staff and suggest alternative" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="lane_kitchen">
+          <mxGeometry x="780" y="90" width="240" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Inventory -->
+        <mxCell id="update_stock" value="Update stock quantities" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane_inventory">
+          <mxGeometry x="110" y="30" width="200" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="inventory_record" value="Inventory Record" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane_inventory">
+          <mxGeometry x="350" y="25" width="145" height="65" as="geometry"/>
+        </mxCell>
+        <mxCell id="check_stock" value="Check stock level" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane_inventory">
+          <mxGeometry x="535" y="30" width="170" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="gw_low_stock" value="X&#xa;Low stock?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="lane_inventory">
+          <mxGeometry x="750" y="20" width="100" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="notify_inventory" value="Notify inventory / supply manager" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="lane_inventory">
+          <mxGeometry x="900" y="30" width="230" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- POS -->
+        <mxCell id="register_product" value="Register traditional products&#xa;(cheese, wine, jam, etc.)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_pos">
+          <mxGeometry x="110" y="25" width="220" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="update_product" value="Update product price and quantity" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_pos">
+          <mxGeometry x="370" y="25" width="220" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="process_sale" value="Process product sale" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_pos">
+          <mxGeometry x="630" y="25" width="190" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="sales_data" value="Sales Transaction" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane_pos">
+          <mxGeometry x="860" y="20" width="155" height="65" as="geometry"/>
+        </mxCell>
+        <mxCell id="maintain_history" value="Maintain purchase / sales history" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane_pos">
+          <mxGeometry x="1060" y="25" width="230" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Finance -->
+        <mxCell id="calculate_bill" value="Calculate total bill automatically" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="lane_finance">
+          <mxGeometry x="350" y="25" width="230" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="generate_invoice" value="Generate receipt / invoice" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="lane_finance">
+          <mxGeometry x="630" y="25" width="220" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="finance_data" value="Financial and transaction data" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="lane_finance">
+          <mxGeometry x="900" y="20" width="180" height="65" as="geometry"/>
+        </mxCell>
+        <mxCell id="collect_data" value="Collect data&#xa;(sales, reservations, inventory)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="lane_finance">
+          <mxGeometry x="110" y="95" width="240" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="generate_reports" value="Generate reports and provide analytics to management" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lane_finance">
+          <mxGeometry x="400" y="95" width="280" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="end_success" value="End" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lane_finance">
+          <mxGeometry x="730" y="102" width="40" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Sequence Flows -->
+        <mxCell id="e1" edge="1" parent="lane_customer" source="start" target="submit_request" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" edge="1" parent="pool" source="submit_request" target="receive_request" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" edge="1" parent="lane_reservation" source="receive_request" target="check_availability" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" edge="1" parent="lane_reservation" source="check_availability" target="gw_available" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="Yes" edge="1" parent="lane_reservation" source="gw_available" target="create_reservation" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" value="No" edge="1" parent="lane_reservation" source="gw_available" target="reject_reservation" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" edge="1" parent="lane_reservation" source="create_reservation" target="reservation_data" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" edge="1" parent="lane_reservation" source="reservation_data" target="notify_staff" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" edge="1" parent="lane_reservation" source="reject_reservation" target="end_rejected" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e10" edge="1" parent="pool" source="notify_staff" target="customer_arrives" style="endArrow=open;html=1;rounded=0;dashed=1;strokeColor=#666666;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e11" edge="1" parent="pool" source="customer_arrives" target="record_order" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e12" edge="1" parent="lane_service" source="record_order" target="associate_order" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e13" edge="1" parent="lane_service" source="associate_order" target="send_kitchen" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e14" edge="1" parent="lane_service" source="send_kitchen" target="order_data" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e15" edge="1" parent="pool" source="send_kitchen" target="prepare_food" style="endArrow=open;html=1;rounded=0;dashed=1;strokeColor=#666666;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e16" edge="1" parent="lane_kitchen" source="prepare_food" target="gw_ingredients" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e17" value="Yes" edge="1" parent="lane_kitchen" source="gw_ingredients" target="update_usage" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e18" value="No" edge="1" parent="lane_kitchen" source="gw_ingredients" target="inform_unavailable" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e19" edge="1" parent="pool" source="update_usage" target="update_stock" style="endArrow=open;html=1;rounded=0;dashed=1;strokeColor=#666666;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e20" edge="1" parent="pool" source="update_usage" target="serve_customer" style="endArrow=open;html=1;rounded=0;dashed=1;strokeColor=#666666;"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e21" edge="1" parent="lane_inventory" source="update_stock" target="inventory_record" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e22" edge="1" parent="lane_inventory" source="inventory_record" target="check_stock" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e23" edge="1" parent="lane_inventory" source="check_stock" target="gw_low_stock" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e24" value="Yes" edge="1" parent="lane_inventory" source="gw_low_stock" target="notify_inventory" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e25" edge="1" parent="pool" source="customer_arrives" target="register_product" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e26" edge="1" parent="lane_pos" source="register_product" target="update_product" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e27" edge="1" parent="lane_pos" source="update_product" target="process_sale" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e28" edge="1" parent="lane_pos" source="process_sale" target="sales_data" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e29" edge="1" parent="lane_pos" source="sales_data" target="maintain_history" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e30" edge="1" parent="pool" source="serve_customer" target="calculate_bill" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e31" edge="1" parent="pool" source="process_sale" target="calculate_bill" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e32" edge="1" parent="lane_finance" source="calculate_bill" target="generate_invoice" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e33" edge="1" parent="lane_finance" source="generate_invoice" target="finance_data" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e34" edge="1" parent="lane_finance" source="collect_data" target="generate_reports" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e35" edge="1" parent="lane_finance" source="generate_reports" target="end_success" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e36" edge="1" parent="pool" source="finance_data" target="collect_data" style="endArrow=block;html=1;rounded=0;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+
       </root>
     </mxGraphModel>
   </diagram>
