@@ -51,4 +51,4 @@
 | NFR-47 | External Requirements | Ethical | The system shall ensure ethical use of customer data. | Medium | All Users |
 | NFR-48 | External Requirements | Regulatory | The system shall comply with food safety reporting standards. | Medium | Manager |
 | NFR-49 | External Requirements | Regulatory | The system shall meet accounting and financial reporting standards. | High | Manager |
-| NFR-50 | External Requirements | Safety/Security | The system shall ensure secure handling of operational and safety data. | High | All Users |
+| NFR-50 | External Requirements | Safety/Security | The system shall ensure secure handling of operational and safety data. (As stated in IEC 61511 Standard) | High | All Users |
